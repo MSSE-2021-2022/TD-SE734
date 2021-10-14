@@ -5,6 +5,7 @@
 
 #include <stdint.h>
 
+// Variables non initialisée pour tester la BSS
 uint32_t a;
 uint32_t b;
 uint32_t c;
