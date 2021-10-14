@@ -26,7 +26,13 @@ void Disable_GPIO_Clock(uint8_t port);
 void pinMode(uint8_t reg, uint8_t pin, uint8_t mode);
 void digitalWrite(uint8_t reg, uint8_t pin, uint8_t mode);
 
+/*  INIT : active le périphérique GPIO : p251 
+    Active la pin PORTB.14 en sortie : p303 + p81 datasheet
+*/
 void led_init(void);
+
+/*  TOOGLE : registres de sorties p306
+*/
 void led_g_on(void);
 void led_g_off(void);
 

@@ -44,20 +44,10 @@ void led_init(void) {
 
 void led_g_on(void) {
     digitalWrite(PORTB, 14, HIGH);
-    GPIO_B_BSSR = 0x4000;
+    //GPIO_B_BSSR = 0x4000;
 }
 
 void led_g_off(void) {
-    //digitalWrite(PORTB, 14, LOW);
-    GPIO_B_BSSR = 0x40000000;
+    digitalWrite(PORTB, 14, LOW);
+    //GPIO_B_BSSR = 0x40000000;
 }
-
-/*
-void led_g_on(void) {
-    GPIO_B_BSSR = 0x4000;
-}
-
-void led_g_off(void) {
-    GPIO_B_BSSR = 0x4000000;
-}
-*/
