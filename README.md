@@ -1,6 +1,14 @@
 # TD-SE734
 Le TD noté de SE743
 
+## Informations
+Ce projet comporte plusieurs branches, une par objetif du TP.
+
+Pour passer d'une branche à l'autre:
+```sh
+git checkout <nom de la branche>
+```
+
 ## A faire
 
 - [x] TODO: Importer le Makefile
