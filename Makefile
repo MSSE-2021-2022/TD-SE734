@@ -6,13 +6,18 @@ CC = $(PREFIX)gcc
 AS = $(PREFIX)as
 GDB = $(PREFIX)gdb
 
+SOURCES = $(wildcard *.c)
+
 CFLAGS = -g -ffreestanding -O1 -Wall -Wextra
 ASFLAGS = -g
 LDFLAGS = -nostdlib -g -T ld_ram.lds
 TARGET_ARCH = -mthumb -mcpu=cortex-m4
 TARGET_MACH = $(TARGET_ARCH)
 
-OBJS = main.o crt0.o memefunc.o init.o
+#OBJS = main.o crt0.o memefunc.o init.o
+OBJS = $(SOURCES:%.c=%.o)
+OBJS += crt0.o
+
 EXE = main.elf
 
 include $($(OBJS):%.o=%.d)
