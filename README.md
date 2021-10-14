@@ -18,7 +18,7 @@ Installer le cross compilateur et debuggeur arm:
 sudo apt install arm-none-eabi-gcc
 sudo apt install arm-none-eabi-as
 sudo apt install gdb-multiarch
-sudo apt install jlink
+sudo apt install jlink # Comment on fait déjà ?
 ```
 ### Pour Arch (btw)
 ```sh
