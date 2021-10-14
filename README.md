@@ -18,5 +18,5 @@ __Pin en INPUT/OUTPUT__
 La documentation des GPIOs est dans le manuel page 303, avec les adresses de début dans le datasheet page 81.  
 Pour mettre une pin en entrée, il faut mettre les valeurs 00 dans le registre __GPIOx_MODER__, et en sortie les valeurs 01 au niveau des bits correspondants.  
 
-__Allumer une LED__
+__Allumer une LED__  
 Registre __GPIOx_ODR__ documenté page 305 du manuel.  
