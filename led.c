@@ -54,14 +54,14 @@ void led(enum ledState state) {
     switch (state) {
         case LED_BLUE:
             // Sortie état bas
-            digitalWrite(PORTC,9,LOW);
             pinMode(PORTC,9,OUTPUT);
+            digitalWrite(PORTC,9,LOW);
             break;
         
         case LED_YELLOW:
             // Sortie état haut
-            digitalWrite(PORTC,9,HIGH);
             pinMode(PORTC,9,OUTPUT);
+            digitalWrite(PORTC,9,HIGH);
             break;
         
         case LED_OFF:
