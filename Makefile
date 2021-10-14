@@ -12,7 +12,7 @@ LDFLAGS = -nostdlib -g -T ld_ram.lds
 TARGET_ARCH = -mthumb -mcpu=cortex-m4
 TARGET_MACH = $(TARGET_ARCH)
 
-OBJS = main.o
+OBJS = main.o crt0.o memefunc.o init.o
 EXE = main.elf
 
 include $($(OBJS):%.o=%.d)
