@@ -10,8 +10,14 @@
 #define GPIO_B_MODE     (*((volatile uint32_t *) (GPIO_B_BASE)))
 #define GPIO_B_BSSR     (*((volatile uint32_t *) (GPIO_B_BASE+0x18)))
 
+#define GPIO_C_BASE     0x48000800
+#define GPIO_C_MODE     (*((volatile uint32_t *) (GPIO_C_BASE)))
+#define GPIO_C_BSSR     (*((volatile uint32_t *) (GPIO_C_BASE+0x18)))
+
 #define GPIO_BASE   0x48000000
 #define GPIO_MODE(x) (*((volatile uint32_t *) (GPIO_BASE+0x400*(x))))
+    // PORT B : 0x48000400
+    // PORT C : 0x48000800
 #define GPIO_OTYPER(x) (*((volatile uint32_t *) (GPIO_BASE+0x04+0x400*(x))))
 #define GPIO_SET(x) (*((volatile uint32_t *) (GPIO_BASE+0x18+(0x400*(x)))))
 
@@ -20,7 +26,11 @@
 #define HIGH 1
 #define LOW 0
 #define PORTB 1
+#define PORTC 2
 
+enum ledState {LED_OFF=0, LED_BLUE=1, LED_YELLOW=2};
+
+void led(enum ledState state);
 void Enable_GPIO_Clock(uint8_t port);
 void Disable_GPIO_Clock(uint8_t port);
 void pinMode(uint8_t reg, uint8_t pin, uint8_t mode);
@@ -35,5 +45,7 @@ void led_init(void);
 */
 void led_g_on(void);
 void led_g_off(void);
+
+
 
 #endif

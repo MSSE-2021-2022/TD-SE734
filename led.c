@@ -34,12 +34,10 @@ void digitalWrite(uint8_t reg, uint8_t pin, uint8_t mode) {
 }
 
 void led_init(void) {
-/*
-    active l'horloge du port B dans le registre RCC_*ENR* idoine,
-    configure la broche PB14 en mode sortie.
-*/
     Enable_GPIO_Clock(PORTB);
+    Enable_GPIO_Clock(PORTC);
     pinMode(PORTB, 14, OUTPUT);
+    pinMode(PORTC, 9, OUTPUT);
 }
 
 void led_g_on(void) {
@@ -50,4 +48,24 @@ void led_g_on(void) {
 void led_g_off(void) {
     digitalWrite(PORTB, 14, LOW);
     //GPIO_B_BSSR = 0x40000000;
+}
+
+void led(enum ledState state) {
+    switch (state) {
+        case LED_BLUE:
+            // Sortie état bas
+            digitalWrite(PORTC,9,LOW);
+            pinMode(PORTC,9,OUTPUT);
+            break;
+        
+        case LED_YELLOW:
+            // Sortie état haut
+            digitalWrite(PORTC,9,HIGH);
+            pinMode(PORTC,9,OUTPUT);
+            break;
+        
+        case LED_OFF:
+            pinMode(PORTC,9,INPUT);
+            break;
+    }
 }
