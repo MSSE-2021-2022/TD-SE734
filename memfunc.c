@@ -1,5 +1,5 @@
 #include <stdint.h>
-#include "memefunc.h"
+#include "memfunc.h"
 
 void* memset(const void* start, int32_t val, uint32_t len) {
 	uint8_t* dest = (uint8_t*) start;

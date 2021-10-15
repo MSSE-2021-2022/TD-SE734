@@ -1,5 +1,5 @@
 #include <stdint.h>
-#include "memefunc.h"
+#include "memfunc.h"
 
 extern uint8_t _start_bss, _end_bss;
 
