@@ -5,14 +5,16 @@ PREFIX = arm-none-eabi-
 CC = $(PREFIX)gcc
 AS = $(PREFIX)as
 GDB = $(PREFIX)gdb
+INC    = -I CMSIS/Device/ST/STM32L4xx/Include -I CMSIS/Include
 
 SOURCES = $(wildcard *.c)
 
-CFLAGS = -g -ffreestanding -O1 -Wall -Wextra
+CFLAGS = -g -ffreestanding -O1 -Wall -Wextra $(INC)
 ASFLAGS = -g
 LDFLAGS = -nostdlib -g -T ld_ram.lds
 TARGET_ARCH = -mthumb -mcpu=cortex-m4
 TARGET_MACH = $(TARGET_ARCH)
+
 
 #OBJS = main.o crt0.o memefunc.o init.o
 OBJS = $(SOURCES:%.c=%.o)
